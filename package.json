@@ -1,0 +1,29 @@
+{
+  "name": "gql-t",
+  "version": "0.0.2",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/potapovDim/gql-t.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/potapovDim/gql-t/issues"
+  },
+  "homepage": "https://github.com/potapovDim/gql-t#readme",
+  "dependencies": {
+    "graphql": "^16.1.0",
+    "node-fetch": "^2.6.6",
+    "sat-utils": "^0.0.33",
+    "yargs": "^17.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
