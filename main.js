@@ -12,9 +12,7 @@ const {
 } = argv;
 
 const init = async () => {
-  if (endpoint) {
     let type = 0;
-
     switch (savetype) {
       case 'by return types': {
         type = 1;
@@ -27,15 +25,15 @@ const init = async () => {
       default:
         break;
     }
+    if (endpoint) {
+      if (endpoint.match(/^(http|https)/gm)) {
+        const reqHeaders = JSON.parse(headers);
+        const methodToSend = method;
 
-    if (endpoint.match(/^(http|https)/gm)) {
-      const reqHeaders = JSON.parse(headers);
-      const methodToSend = method;
-
-      getRemoteSchema(endpoint, methodToSend, reqHeaders, type);
-    } else {
-      readFromFile(endpoint, type);
-    }
+        getRemoteSchema(endpoint, methodToSend, reqHeaders, type);
+      } else {
+        readFromFile(endpoint, type);
+      }
   } else {
     console.error(
       'Endpoint was not found, please use --endpoint, for example --endpoint="https://backend.com/graphql"',
